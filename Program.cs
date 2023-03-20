@@ -10,18 +10,31 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Подсчитать количество четных элементов в одномерном массиве.
-            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int n = array.Length;
-            int count = 0;
-            for (int i = 0; i < n; i++)
+            //Определить количество отрицательных.
+            int[] array = new int[15];
+            Random random = new Random();
+            int negativeCount = 0;
+            int positiveCount = 0;
+            int zeroCount = 0;
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] % 2 == 0)
+                array[i] = random.Next(-10, 11);
+                if (array[i] < 0)
                 {
-                    count++;
+                    negativeCount++;
+                }
+                else if (array[i] > 0)
+                {
+                    positiveCount++;
+                }
+                else
+                {
+                    zeroCount++;
                 }
             }
-            Console.WriteLine("Количество четных элементов: " + count);
+            Console.WriteLine("Отрицательное:" + negativeCount);
+            Console.WriteLine("Положительное:" + positiveCount);
+            Console.WriteLine("Нулевое:" + zeroCount);
             Console.Read();
         }
     }
