@@ -10,16 +10,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Найти средний рост студентов.
-            double[] heights = { 170.2, 175.5, 168.9, 182.1, 177.6 };
-            int n = heights.Length;
-            double averageHeight = 0;
+            //Подсчитать количество четных элементов в одномерном массиве.
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int n = array.Length;
+            int count = 0;
             for (int i = 0; i < n; i++)
             {
-                averageHeight += heights[i];
+                if (array[i] % 2 == 0)
+                {
+                    count++;
+                }
             }
-            averageHeight /= n;
-            Console.WriteLine("Средний рост студентов: " + averageHeight);
+            Console.WriteLine("Количество четных элементов: " + count);
             Console.Read();
         }
     }
